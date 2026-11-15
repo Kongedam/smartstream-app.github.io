@@ -38,25 +38,73 @@
     <h2 data-i18n="m.du.liveGuideH">Guide and folders</h2>
     <ul>
       <li data-i18n="m.du.live1">The left sidebar lists your selected TV folders (per provider).</li>
-      <li data-i18n="m.du.live2">Favorite Channels and Favorite PPVs sit at the top once you star channels.</li>
+      <li data-i18n="m.du.live2">Favorite Channels sits at the top once you star channels or move folders under favorites.</li>
       <li data-i18n="m.du.live3">Search the guide from the side menu to find a programme or channel.</li>
       <li data-i18n="m.du.live4">If your provider supports catch-up, you can start a past programme from the guide.</li>
     </ul>
 
-    <h2 data-i18n="m.du.liveFavH">Favorite Channels and multiple streams</h2>
-    <p data-i18n="m.du.liveMultiP">A favorite is not limited to one provider. You can attach extra backup streams from other providers onto the same Favorite Channel. If one source is busy or drops, another stream is already linked.</p>
+    <h2 data-i18n="m.du.liveFavFolderH">Favorites, favorite folders, and hiding normal TV folders</h2>
     <ul>
-      <li data-i18n="m.du.liveFav1">Add a channel to Favorite Channels or Favorite PPVs from the guide.</li>
-      <li data-i18n="m.du.liveFav2">You can add a whole folder at once.</li>
-      <li data-i18n-html="m.du.liveMulti1"><strong>Link extra streams:</strong> from a channel, choose add stream to an existing favorite — or use Settings → Playback &amp; Live TV → Live TV &amp; EPG → Favorites → Link stream to favorites.</li>
-      <li data-i18n="m.du.liveMulti2">The player menu (OK in fullscreen) lets you switch streams by hand if several are linked.</li>
-      <li data-i18n="m.du.liveFav3">PPV folders can show only active events, and can sort by start time.</li>
-      <li data-i18n="m.du.liveFav4">Set or remove a reminder on a programme. How many minutes before start is under Settings → Playback &amp; Live TV → Live TV &amp; EPG.</li>
+      <li data-i18n-html="m.du.liveFav1"><strong>Add a channel:</strong> hold <strong>OK</strong> on a channel in the guide and choose <strong>Add to favorites</strong>.</li>
+      <li data-i18n-html="m.du.liveFav2"><strong>Add or move a whole folder:</strong> hold <strong>OK</strong> on a folder in the sidebar to choose <strong>Add all channels to Favorite Channels</strong> or <strong>Move folder under favorites</strong> so it becomes a favorite folder.</li>
+      <li data-i18n-html="m.du.liveFavGroup"><strong>Channel groups inside Favorites:</strong> hold <strong>OK</strong> on a channel inside Favorite Channels and choose <strong>Add channel group above</strong> to create sections, or <strong>Move channel or groups</strong> to reorder them.</li>
+      <li data-i18n-html="m.du.liveFavHide"><strong>Hide normal TV folders:</strong> go to <strong>Settings → Playback &amp; Live TV → Live TV &amp; EPG → Favorites → EPG sidebar</strong> and switch from <em>All TV folders</em> to <em>Favorite Channels</em>. Normal provider folders are hidden so only your favorites and favorite folders appear, and Live TV opens directly into your favorites.</li>
+      <li data-i18n="m.du.liveFav4">Set or remove a reminder on a programme. How many minutes before start is under Settings → Playback &amp; Live TV → Live TV &amp; EPG → EPG &amp; Program Guide.</li>
     </ul>
     <figure class="figure">
       <img src="../images/screenshots/27-live-tv-favorites.png" data-i18n-alt="m.du.liveFavAlt" alt="Live TV favorites" onerror="this.outerHTML='<div class=\'figure placeholder\'>Screenshot needed: 27-live-tv-favorites.png</div>'">
     </figure>
+    <figure class="figure">
+      <img src="../images/screenshots/44-settings-live-tv-favorites.png" data-i18n-alt="m.du.liveFavSetAlt" alt="Favorites settings and EPG sidebar filter" onerror="this.outerHTML='<div class=\'figure placeholder\'>Screenshot needed: 44-settings-live-tv-favorites.png</div>'">
+      <figcaption data-i18n="m.du.liveFavSetCap">Settings → Playback &amp; Live TV → Live TV &amp; EPG → Favorites — hide normal TV folders with EPG sidebar.</figcaption>
+    </figure>
+
+    <h2 data-i18n="m.du.liveFavH">Backup streams for favorite channels</h2>
+    <p data-i18n="m.du.liveMultiP">A favorite is not limited to one provider. You can attach extra backup streams from other providers onto the same Favorite Channel. If one source is busy or drops, another stream is already linked.</p>
+    <ul>
+      <li data-i18n-html="m.du.liveMultiLong"><strong>From the long-press menu (hold OK):</strong> hold <strong>OK</strong> on any channel in a normal folder and choose <strong>Use as backup for a favorite</strong> to attach it directly — or hold <strong>OK</strong> on any channel and choose <strong>Find backup streams for favorites</strong>. On a favorite that already has backups, choose <strong>See all streams</strong> to inspect or remove them.</li>
+      <li data-i18n-html="m.du.liveMulti1"><strong>From Settings:</strong> open <strong>Settings → Playback &amp; Live TV → Live TV &amp; EPG → Favorites → Find backup streams for favorites</strong>. You can also run <strong>Scan favorites</strong> (Missing or All) there to test video and audio quality across linked streams.</li>
+      <li data-i18n="m.du.liveMulti2">The player menu (OK in fullscreen) lets you switch streams by hand if several are linked.</li>
+    </ul>
+    <figure class="figure">
+      <img src="../images/screenshots/39-live-tv-long-press-menu.png" data-i18n-alt="m.du.liveLongAlt" alt="Live TV long-press menu" onerror="this.outerHTML='<div class=\'figure placeholder\'>Screenshot needed: 39-live-tv-long-press-menu.png</div>'">
+      <figcaption data-i18n="m.du.liveLongCap">Long-press menu (hold OK on a channel) — favorites, backup streams, Change EPG, and Change icon.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="../images/screenshots/38-live-tv-link-streams.png" data-i18n-alt="m.du.liveLinkAlt" alt="Find backup streams for favorites" onerror="this.outerHTML='<div class=\'figure placeholder\'>Screenshot needed: 38-live-tv-link-streams.png</div>'">
+      <figcaption data-i18n="m.du.liveLinkCap">Find backup streams for favorites — match and attach backup streams from other providers.</figcaption>
+    </figure>
     <p data-i18n-html="m.du.liveMultiNote">Linked backups are what <a href="daily-switching.html">Intelligent stream switching</a> uses when a stream fails.</p>
+
+    <h2 data-i18n="m.du.epgMgrH">EPG Manager (EPG &amp; Program Guide)</h2>
+    <p data-i18n-html="m.du.epgMgrP">Open <strong>Settings → Playback &amp; Live TV → Live TV &amp; EPG → EPG &amp; Program Guide</strong> to manage your TV guide sources and channel matching.</p>
+    <ul>
+      <li data-i18n-html="m.du.epgMgr1"><strong>Add your own EPG list:</strong> choose <strong>External EPG &amp; Refresh</strong> (also reachable via <strong>+ Manage XMLTV</strong> on IPTV Providers) to see provider EPG status, force a refresh of all guides now, or add up to <strong>3 custom XMLTV URLs</strong> (typed or scanned via QR from your phone). Custom lists are shared across the household.</li>
+      <li data-i18n-html="m.du.epgMgr2"><strong>Auto-match channels to the best available EPG:</strong> open <strong>EPG Channel Matcher</strong> and press <strong>Auto-match Wizard</strong>. SmartStream scans all your provider EPGs and custom XMLTV lists and matches each channel to the best available guide. You can filter by <em>All</em>, <em>Suggested</em>, or <em>Unmatched</em>, switch folder (e.g. Favorite Channels), or search manually.</li>
+      <li data-i18n-html="m.du.epgMgr3"><strong>Single channel in the guide:</strong> you can also hold <strong>OK</strong> on any channel in Live TV and choose <strong>Change EPG</strong> to pick or reset the guide for that channel alone.</li>
+    </ul>
+    <figure class="figure">
+      <img src="../images/screenshots/40-settings-epg-manager.png" data-i18n-alt="m.du.epgMgrAlt" alt="EPG & Program Guide settings" onerror="this.outerHTML='<div class=\'figure placeholder\'>Screenshot needed: 40-settings-epg-manager.png</div>'">
+      <figcaption data-i18n="m.du.epgMgrCap">EPG &amp; Program Guide — days forward/back, reminders, EPG Channel Matcher, and External EPG &amp; Refresh.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="../images/screenshots/41-settings-epg-channel-matcher.png" data-i18n-alt="m.du.epgMatchAlt" alt="EPG Channel Matcher" onerror="this.outerHTML='<div class=\'figure placeholder\'>Screenshot needed: 41-settings-epg-channel-matcher.png</div>'">
+      <figcaption data-i18n="m.du.epgMatchCap">EPG Channel Matcher — Auto-match Wizard, filters, and recommended EPG matches across sources.</figcaption>
+    </figure>
+
+    <h2 data-i18n="m.du.iconH">TV channel icons</h2>
+    <ul>
+      <li data-i18n-html="m.du.icon1"><strong>From the long-press menu (hold OK):</strong> hold <strong>OK</strong> on a channel in the Live TV guide and choose <strong>Change icon</strong>. You can pick logos from the stream, EPG, or the built-in logo catalog (with pixel resolution shown), or choose <strong>Reset to original</strong>.</li>
+      <li data-i18n-html="m.du.icon2"><strong>Auto-match from Settings:</strong> open <strong>Settings → Playback &amp; Live TV → Live TV &amp; EPG → Channel Icon Matcher</strong> and press <strong>Auto-match</strong> to automatically find and apply the best channel logos for all channels in the selected folder. You can also filter <em>Custom</em> vs <em>Original</em>, search all logos manually, or reset channels back to their original stream logo.</li>
+    </ul>
+    <figure class="figure">
+      <img src="../images/screenshots/42-live-tv-change-icon-dialog.png" data-i18n-alt="m.du.iconDlgAlt" alt="Change channel icon dialog" onerror="this.outerHTML='<div class=\'figure placeholder\'>Screenshot needed: 42-live-tv-change-icon-dialog.png</div>'">
+      <figcaption data-i18n="m.du.iconDlgCap">Change icon from the long-press menu — choose from Stream, EPG, or Custom logos.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="../images/screenshots/43-settings-channel-icon-matcher.png" data-i18n-alt="m.du.iconMgrAlt" alt="Channel Icon Matcher" onerror="this.outerHTML='<div class=\'figure placeholder\'>Screenshot needed: 43-settings-channel-icon-matcher.png</div>'">
+      <figcaption data-i18n="m.du.iconMgrCap">Channel Icon Matcher in Settings — Auto-match the best logos for an entire folder.</figcaption>
+    </figure>
 
     <h2 data-i18n="m.du.liveFsH">Fullscreen</h2>
     <figure class="figure">
