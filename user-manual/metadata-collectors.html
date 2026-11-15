@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metadata Collectors — SmartStream</title>
+  <link rel="stylesheet" href="../assets/doc.css">
+</head>
+<body data-title-key="m.mc.title">
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-logo" href="../index.html"><img src="../images/brand/smartstream-logo.png" alt="SmartStream"></a>
+      <nav class="site-nav">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <a href="index.html" class="active" data-i18n="nav.manual">User Manual</a>
+        <a href="https://github.com/smartstream-app/smartstream-app.github.io/issues" target="_blank" rel="noopener" data-i18n="nav.support">Support</a>
+      </nav>
+      <div class="lang-switch" id="langSwitch"></div>
+    </div>
+  </header>
+
+  <main>
+    <h1 data-i18n="m.mc.h1">8. Metadata Collectors</h1>
+    <p data-i18n-html="m.mc.lead">A Metadata Collector is a small description of a web service (API) that SmartStream can ask for title details: posters, plot, rating, genres, cast and more. You can use the built-in anime collector, import a collector file, or build your own without typing JSON.</p>
+    <p data-i18n-html="m.mc.availP">Metadata Collectors are in the app versions from Google Play and Amazon. TMDB stays the main source for your library; a collector only adds what you ask it to.</p>
+
+    <h2 data-i18n="m.mc.whereH">Where to find it</h2>
+    <p data-i18n-html="m.mc.whereP">Settings → Accounts &amp; Connections → <strong>Metadata Collectors</strong> (primary profile only).</p>
+    <figure class="figure">
+      <img src="../images/screenshots/50-collectors-settings-entry.png" data-i18n-alt="m.mc.fig50" alt="The entry under Accounts &amp; Connections.">
+      <figcaption data-i18n="m.mc.fig50">The entry under Accounts &amp; Connections.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="../images/screenshots/51-collectors-overview.png" data-i18n-alt="m.mc.fig51" alt="The overview: every collector with its status and buttons.">
+      <figcaption data-i18n="m.mc.fig51">The overview: every collector with its status and buttons.</figcaption>
+    </figure>
+    <p data-i18n-html="m.mc.overviewP">Each collector shows <strong>Ready</strong>, <strong>Needs an API key</strong> or <strong>Switched off</strong>, and buttons for API key, Edit on screen, Fullscreen test, Export and Delete.</p>
+
+    <h2 data-i18n="m.mc.animeH">Built-in: anime from MyAnimeList (Jikan)</h2>
+    <p data-i18n-html="m.mc.animeP">SmartStream ships one collector: <strong>Jikan (MyAnimeList)</strong>. It is off until you switch it <strong>On</strong> in the overview. It is free and needs no key.</p>
+    <ul>
+      <li data-i18n-html="m.mc.anime1">It works on folders with <strong>anime</strong> in the name (movies and series).</li>
+      <li data-i18n-html="m.mc.anime2">Titles TMDB already found keep all their TMDB data; the collector only fills details that are still missing.</li>
+      <li data-i18n-html="m.mc.anime3">Titles TMDB could not find get poster, plot, rating, genres, studio and episode count from MyAnimeList.</li>
+      <li data-i18n-html="m.mc.anime4">The work runs quietly in the background after each scan, at most 45 requests a minute. Every title is asked once.</li>
+      <li data-i18n-html="m.mc.anime5">To use other folder words, choose <strong>Edit on screen</strong>, change step 3 and save. Your copy replaces the built-in one; delete your copy to go back.</li>
+    </ul>
+
+    <h2 data-i18n="m.mc.phoneH">Create or edit with your phone (QR)</h2>
+    <p data-i18n-html="m.mc.phoneP">Typing web addresses with a remote is slow. Choose <strong>Create / edit via phone (QR)</strong> and scan the code. Phone and TV must be on the same Wi-Fi; everything sent between them is encrypted with a key that only travels inside the QR code.</p>
+    <figure class="figure">
+      <img src="../images/screenshots/52-collectors-phone-qr.png" data-i18n-alt="m.mc.fig52" alt="The TV shows the QR code and, on the right, a live preview of the card you build on the phone.">
+      <figcaption data-i18n="m.mc.fig52">The TV shows the QR code and, on the right, a live preview of the card you build on the phone.</figcaption>
+    </figure>
+    <ol>
+      <li data-i18n-html="m.mc.phone1"><strong>Import / Export:</strong> choose a .json file or paste the JSON, add the API key if needed and tap <strong>Install on TV</strong>. Collectors already on the TV can be downloaded or opened for editing.</li>
+      <li data-i18n-html="m.mc.phone2"><strong>Build / Edit:</strong> fill in name, base URL, search path and search parameter, pick authentication and speed, tap words from your TV's folder names, then <strong>Run test on folder</strong>.</li>
+      <li data-i18n-html="m.mc.phone3">The TV takes a real title from that folder, asks the source and sends back every field it found with an example value. Each library field gets a dropdown; SmartStream already picks a good guess.</li>
+      <li data-i18n-html="m.mc.phone4">Change any dropdown and the card preview updates on the phone and on the TV. Tap <strong>Save on TV</strong> or <strong>Download .json</strong>.</li>
+    </ol>
+    <figure class="figure">
+      <img src="../images/screenshots/53-collectors-phone-form.png" data-i18n-alt="m.mc.fig53" alt="The phone page: source, access, speed and folder words.">
+      <figcaption data-i18n="m.mc.fig53">The phone page: source, access, speed and folder words.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="../images/screenshots/54-collectors-phone-card.png" data-i18n-alt="m.mc.fig54" alt="Field dropdowns with the card preview at the bottom.">
+      <figcaption data-i18n="m.mc.fig54">Field dropdowns with the card preview at the bottom.</figcaption>
+    </figure>
+
+    <h2 data-i18n="m.mc.screenH">Build on the TV screen (5 steps)</h2>
+    <p data-i18n-html="m.mc.screenP">Choose <strong>Build on screen</strong>. Almost everything is chosen with the remote; text fields open the keyboard only when you press OK.</p>
+    <ul>
+      <li data-i18n-html="m.mc.step1"><strong>1. Source:</strong> name, base URL, search path and the name of the search parameter. Choose content types, whether there is a details request by ID, and whether series use their own search.</li>
+      <li data-i18n-html="m.mc.step2"><strong>2. Access &amp; speed:</strong> no key, bearer token, header or URL parameter, the API key, and a speed: 30, 60, 90 or 180 per minute, 10 or 50 per second, or your own value. SmartStream starts slower, speeds up after six good answers and slows down by itself when the source says it is busy.</li>
+      <li data-i18n-html="m.mc.step3"><strong>3. Folders:</strong> tap words from your own folder names: once = include (green), twice = exclude (red), three times = remove. A collector with folder words only handles those folders.</li>
+      <li data-i18n-html="m.mc.step4"><strong>4. Test &amp; fields:</strong> pick one of your folders and choose <strong>Run test on folder</strong>. Then select any library field to choose which source field fills it; the card preview on the right updates at once.</li>
+      <li data-i18n-html="m.mc.step5"><strong>5. Save:</strong> shows how many fields are filled and any problems. Choose <strong>Save collector</strong> or <strong>Fullscreen test</strong>.</li>
+    </ul>
+    <figure class="figure">
+      <img src="../images/screenshots/55-collectors-editor-source.png" data-i18n-alt="m.mc.fig55" alt="Step 1 — source.">
+      <figcaption data-i18n="m.mc.fig55">Step 1 — source.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="../images/screenshots/56-collectors-editor-access.png" data-i18n-alt="m.mc.fig56" alt="Step 2 — access and speed.">
+      <figcaption data-i18n="m.mc.fig56">Step 2 — access and speed.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="../images/screenshots/57-collectors-editor-folders.png" data-i18n-alt="m.mc.fig57" alt="Step 3 — folder words (folder names blurred).">
+      <figcaption data-i18n="m.mc.fig57">Step 3 — folder words (folder names blurred).</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="../images/screenshots/58-collectors-editor-test.png" data-i18n-alt="m.mc.fig58" alt="Step 4 — test on a folder with the card preview.">
+      <figcaption data-i18n="m.mc.fig58">Step 4 — test on a folder with the card preview.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="../images/screenshots/59-collectors-field-picker.png" data-i18n-alt="m.mc.fig59" alt="Choosing the source field for a library field.">
+      <figcaption data-i18n="m.mc.fig59">Choosing the source field for a library field.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="../images/screenshots/60-collectors-editor-save.png" data-i18n-alt="m.mc.fig60" alt="Step 5 — save or test.">
+      <figcaption data-i18n="m.mc.fig60">Step 5 — save or test.</figcaption>
+    </figure>
+
+    <h2 data-i18n="m.mc.testH">Fullscreen live test</h2>
+    <p data-i18n-html="m.mc.testP">The log on the left shows each step: the search text, the request, the answer time, the result that was picked and every field. On the right you see the finished card as it will look in your library.</p>
+    <figure class="figure">
+      <img src="../images/screenshots/61-collectors-live-test.png" data-i18n-alt="m.mc.fig61" alt="Live test: log on the left, result card on the right.">
+      <figcaption data-i18n="m.mc.fig61">Live test: log on the left, result card on the right.</figcaption>
+    </figure>
+
+    <h2 data-i18n="m.mc.seriesH">Separate searches for movies and series</h2>
+    <p data-i18n-html="m.mc.seriesP">Many sources search movies and series in different places. In step 1 choose <strong>Own search for series</strong> and enter the series path. Test once with a movie folder and once with a series folder; each search keeps its own field choices.</p>
+
+    <h2 data-i18n="m.mc.keysH">API keys, export and backup</h2>
+    <p data-i18n-html="m.mc.keysP">API keys are stored encrypted on the TV and are never written into an exported collector file, so you can share a file safely. With Cloud Sync on, your collectors, their keys and the on/off state of the built-in collector are saved in your household backup, encrypted with your sync PIN.</p>
+
+    <h2 data-i18n="m.mc.fieldsH">All library fields</h2>
+    <p data-i18n-html="m.mc.fieldsP">These are the fields a collector can fill. The key is used in the <code>mapping</code> of a collector file.</p>
+    <table class="data">
+      <tr><th data-i18n="m.mc.thField">Field</th><th data-i18n="m.mc.thKey">Key</th><th data-i18n="m.mc.thSmart">What SmartStream does with it</th></tr>
+      <tr><td data-i18n="m.mc.f_id">Unique ID</td><td><code>id</code></td><td data-i18n-html="m.mc.c_id">Stable library id that never clashes with TMDB</td></tr>
+      <tr><td data-i18n="m.mc.f_title">Title</td><td><code>title</code></td><td data-i18n-html="m.mc.c_title">Decodes HTML characters and trims</td></tr>
+      <tr><td data-i18n="m.mc.f_original_title">Original title</td><td><code>original_title</code></td><td data-i18n-html="m.mc.c_title">Decodes HTML characters and trims</td></tr>
+      <tr><td data-i18n="m.mc.f_overview">Description / plot</td><td><code>overview</code></td><td data-i18n-html="m.mc.c_overview">Removes HTML tags such as &lt;p&gt;</td></tr>
+      <tr><td data-i18n="m.mc.f_tagline">Tagline</td><td><code>tagline</code></td><td data-i18n-html="m.mc.c_overview">Removes HTML tags such as &lt;p&gt;</td></tr>
+      <tr><td data-i18n="m.mc.f_poster">Poster</td><td><code>poster</code></td><td data-i18n-html="m.mc.c_poster">Accepts fallbacks (a|b) and image objects</td></tr>
+      <tr><td data-i18n="m.mc.f_backdrop">Background image</td><td><code>backdrop</code></td><td data-i18n-html="m.mc.c_backdrop">Uses the poster when no background exists</td></tr>
+      <tr><td data-i18n="m.mc.f_trailer">Trailer (video link)</td><td><code>trailer</code></td><td data-i18n-html="m.mc.c_text">Plain text</td></tr>
+      <tr><td data-i18n="m.mc.f_release_date">Release date / year</td><td><code>release_date</code></td><td data-i18n-html="m.mc.c_release">Also fills the year (YYYY)</td></tr>
+      <tr><td data-i18n="m.mc.f_runtime_minutes">Runtime (minutes)</td><td><code>runtime_minutes</code></td><td data-i18n-html="m.mc.c_runtime">Reads 120, "120 min", "2h 5m" or PT2H5M</td></tr>
+      <tr><td data-i18n="m.mc.f_runtime_seconds">Runtime (seconds)</td><td><code>runtime_seconds</code></td><td data-i18n-html="m.mc.c_seconds">Divided by 60 into minutes</td></tr>
+      <tr><td data-i18n="m.mc.f_rating">Rating</td><td><code>rating</code></td><td data-i18n-html="m.mc.c_rating">Shown as 7.8; 0–100 scales become 0–10</td></tr>
+      <tr><td data-i18n="m.mc.f_vote_count">Vote count</td><td><code>vote_count</code></td><td data-i18n-html="m.mc.c_count">Whole number; a list is counted</td></tr>
+      <tr><td data-i18n="m.mc.f_popularity">Popularity / score</td><td><code>popularity</code></td><td data-i18n-html="m.mc.c_number">Number</td></tr>
+      <tr><td data-i18n="m.mc.f_genres">Genres / tags</td><td><code>genres</code></td><td data-i18n-html="m.mc.c_list">Joins arrays like tags[*].name, removes duplicates</td></tr>
+      <tr><td data-i18n="m.mc.f_studio">Studio / network</td><td><code>studio</code></td><td data-i18n-html="m.mc.c_list">Joins arrays like tags[*].name, removes duplicates</td></tr>
+      <tr><td data-i18n="m.mc.f_director">Director</td><td><code>director</code></td><td data-i18n-html="m.mc.c_list">Joins arrays like tags[*].name, removes duplicates</td></tr>
+      <tr><td data-i18n="m.mc.f_cast_names">Cast (names)</td><td><code>cast_names</code></td><td data-i18n-html="m.mc.c_list">Joins arrays like tags[*].name, removes duplicates</td></tr>
+      <tr><td data-i18n="m.mc.f_cast_photos">Cast (photos)</td><td><code>cast_photos</code></td><td data-i18n-html="m.mc.c_photos">Photo per cast member, in the same order as the names</td></tr>
+      <tr><td data-i18n="m.mc.f_mpaa_rating">Age rating</td><td><code>mpaa_rating</code></td><td data-i18n-html="m.mc.c_text">Plain text</td></tr>
+      <tr><td data-i18n="m.mc.f_language">Language code</td><td><code>language</code></td><td data-i18n-html="m.mc.c_text">Plain text</td></tr>
+      <tr><td data-i18n="m.mc.f_status">Series status</td><td><code>status</code></td><td data-i18n-html="m.mc.c_text">Plain text</td></tr>
+      <tr><td data-i18n="m.mc.f_total_seasons">Number of seasons</td><td><code>total_seasons</code></td><td data-i18n-html="m.mc.c_count">Whole number; a list is counted</td></tr>
+      <tr><td data-i18n="m.mc.f_total_episodes">Number of episodes</td><td><code>total_episodes</code></td><td data-i18n-html="m.mc.c_count">Whole number; a list is counted</td></tr>
+    </table>
+
+    <h2 data-i18n="m.mc.pathsH">Writing field paths</h2>
+    <ul>
+      <li data-i18n-html="m.mc.paths1"><code>a.b</code> — a field inside an object</li>
+      <li data-i18n-html="m.mc.paths2"><code>a|b</code> — use b when a is empty</li>
+      <li data-i18n-html="m.mc.paths3"><code>list[*].name</code> — every name in a list</li>
+      <li data-i18n-html="m.mc.paths4"><code>$</code> — the answer itself is the result list</li>
+    </ul>
+    <p data-i18n-html="m.mc.paths5">Placeholders in paths and parameters: <code>{query}</code>, <code>{year}</code>, <code>{id}</code>, <code>{api_key}</code>.</p>
+
+    <h2 data-i18n="m.mc.examplesH">Examples</h2>
+    <p data-i18n-html="m.mc.exTvmaze"><strong>TVMaze</strong> (series, free, no key). Results are the answer itself (<code>$</code>).</p>
+    <pre><code>{
+  &quot;schema_version&quot;: 1,
+  &quot;plugin_id&quot;: &quot;my-tvmaze&quot;,
+  &quot;name&quot;: &quot;TVMaze&quot;,
+  &quot;version&quot;: 1,
+  &quot;categories&quot;: [
+    &quot;series&quot;
+  ],
+  &quot;http&quot;: {
+    &quot;base_url&quot;: &quot;https://api.tvmaze.com&quot;,
+    &quot;auth_type&quot;: &quot;none&quot;,
+    &quot;requests_per_minute&quot;: 60
+  },
+  &quot;endpoints&quot;: {
+    &quot;search&quot;: {
+      &quot;path&quot;: &quot;/search/shows&quot;,
+      &quot;query_params&quot;: {
+        &quot;q&quot;: &quot;{query}&quot;
+      },
+      &quot;results_path&quot;: &quot;$&quot;,
+      &quot;mapping&quot;: {
+        &quot;id&quot;: &quot;show.id&quot;,
+        &quot;title&quot;: &quot;show.name&quot;,
+        &quot;overview&quot;: &quot;show.summary&quot;,
+        &quot;poster&quot;: &quot;show.image.original|show.image.medium&quot;,
+        &quot;release_date&quot;: &quot;show.premiered&quot;,
+        &quot;runtime_minutes&quot;: &quot;show.runtime&quot;,
+        &quot;rating&quot;: &quot;show.rating.average&quot;,
+        &quot;genres&quot;: &quot;show.genres&quot;,
+        &quot;studio&quot;: &quot;show.network.name&quot;,
+        &quot;language&quot;: &quot;show.language&quot;,
+        &quot;status&quot;: &quot;show.status&quot;
+      }
+    }
+  },
+  &quot;folder_rules&quot;: [
+    {
+      &quot;include&quot;: [
+        &quot;kids&quot;
+      ]
+    }
+  ]
+}</code></pre>
+    <p data-i18n-html="m.mc.exJikan"><strong>Jikan / MyAnimeList</strong> (anime, free, no key). This is the built-in collector, shortened; movies and series use <code>type=movie</code> and <code>type=tv</code>.</p>
+    <pre><code>{
+  &quot;schema_version&quot;: 1,
+  &quot;plugin_id&quot;: &quot;my-anime&quot;,
+  &quot;name&quot;: &quot;Jikan (MyAnimeList)&quot;,
+  &quot;version&quot;: 1,
+  &quot;categories&quot;: [
+    &quot;movie&quot;,
+    &quot;series&quot;
+  ],
+  &quot;http&quot;: {
+    &quot;base_url&quot;: &quot;https://api.jikan.moe/v4&quot;,
+    &quot;auth_type&quot;: &quot;none&quot;,
+    &quot;requests_per_minute&quot;: 45
+  },
+  &quot;endpoints&quot;: {
+    &quot;search&quot;: {
+      &quot;path&quot;: &quot;/anime&quot;,
+      &quot;query_params&quot;: {
+        &quot;q&quot;: &quot;{query}&quot;,
+        &quot;type&quot;: &quot;movie&quot;,
+        &quot;sfw&quot;: &quot;true&quot;
+      },
+      &quot;results_path&quot;: &quot;data&quot;,
+      &quot;mapping&quot;: {
+        &quot;id&quot;: &quot;mal_id&quot;,
+        &quot;title&quot;: &quot;title_english|title&quot;,
+        &quot;overview&quot;: &quot;synopsis&quot;,
+        &quot;poster&quot;: &quot;images.jpg.large_image_url&quot;,
+        &quot;release_date&quot;: &quot;aired.from|year&quot;,
+        &quot;rating&quot;: &quot;score&quot;,
+        &quot;genres&quot;: &quot;genres[*].name&quot;,
+        &quot;studio&quot;: &quot;studios[*].name&quot;
+      }
+    },
+    &quot;search_series&quot;: {
+      &quot;path&quot;: &quot;/anime&quot;,
+      &quot;query_params&quot;: {
+        &quot;q&quot;: &quot;{query}&quot;,
+        &quot;type&quot;: &quot;tv&quot;,
+        &quot;sfw&quot;: &quot;true&quot;
+      },
+      &quot;results_path&quot;: &quot;data&quot;,
+      &quot;mapping&quot;: {
+        &quot;id&quot;: &quot;mal_id&quot;,
+        &quot;title&quot;: &quot;title_english|title&quot;,
+        &quot;overview&quot;: &quot;synopsis&quot;,
+        &quot;poster&quot;: &quot;images.jpg.large_image_url&quot;,
+        &quot;release_date&quot;: &quot;aired.from|year&quot;,
+        &quot;rating&quot;: &quot;score&quot;,
+        &quot;genres&quot;: &quot;genres[*].name&quot;,
+        &quot;studio&quot;: &quot;studios[*].name&quot;,
+        &quot;total_episodes&quot;: &quot;episodes&quot;
+      }
+    }
+  },
+  &quot;folder_rules&quot;: [
+    {
+      &quot;include&quot;: [
+        &quot;anime&quot;
+      ]
+    }
+  ]
+}</code></pre>
+    <p data-i18n-html="m.mc.exOmdb"><strong>OMDb</strong> (movies and series, free key from omdbapi.com). The key goes in the URL parameter <code>apikey</code>; details are fetched by IMDb ID.</p>
+    <pre><code>{
+  &quot;schema_version&quot;: 1,
+  &quot;plugin_id&quot;: &quot;my-omdb&quot;,
+  &quot;name&quot;: &quot;OMDb&quot;,
+  &quot;version&quot;: 1,
+  &quot;categories&quot;: [
+    &quot;movie&quot;,
+    &quot;series&quot;
+  ],
+  &quot;http&quot;: {
+    &quot;base_url&quot;: &quot;https://www.omdbapi.com&quot;,
+    &quot;auth_type&quot;: &quot;query&quot;,
+    &quot;auth_query_param&quot;: &quot;apikey&quot;,
+    &quot;requests_per_minute&quot;: 30
+  },
+  &quot;setup&quot;: {
+    &quot;requires_api_key&quot;: true
+  },
+  &quot;endpoints&quot;: {
+    &quot;search&quot;: {
+      &quot;path&quot;: &quot;/&quot;,
+      &quot;query_params&quot;: {
+        &quot;s&quot;: &quot;{query}&quot;,
+        &quot;y&quot;: &quot;{year}&quot;
+      },
+      &quot;results_path&quot;: &quot;Search&quot;,
+      &quot;mapping&quot;: {
+        &quot;id&quot;: &quot;imdbID&quot;,
+        &quot;title&quot;: &quot;Title&quot;,
+        &quot;poster&quot;: &quot;Poster&quot;,
+        &quot;release_date&quot;: &quot;Year&quot;
+      }
+    },
+    &quot;details&quot;: {
+      &quot;path&quot;: &quot;/&quot;,
+      &quot;query_params&quot;: {
+        &quot;i&quot;: &quot;{id}&quot;,
+        &quot;plot&quot;: &quot;full&quot;
+      },
+      &quot;mapping&quot;: {
+        &quot;overview&quot;: &quot;Plot&quot;,
+        &quot;runtime_minutes&quot;: &quot;Runtime&quot;,
+        &quot;rating&quot;: &quot;imdbRating&quot;,
+        &quot;vote_count&quot;: &quot;imdbVotes&quot;,
+        &quot;genres&quot;: &quot;Genre&quot;,
+        &quot;director&quot;: &quot;Director&quot;,
+        &quot;cast_names&quot;: &quot;Actors&quot;,
+        &quot;mpaa_rating&quot;: &quot;Rated&quot;,
+        &quot;language&quot;: &quot;Language&quot;
+      }
+    }
+  }
+}</code></pre>
+
+    <h2 data-i18n="m.mc.rulesH">Rules for collectors</h2>
+    <ul>
+      <li data-i18n-html="m.mc.rules1">Only use sources you are allowed to use, and follow each source's own terms and request limits.</li>
+      <li data-i18n-html="m.mc.rules2">Collectors for illegal content or for sexual content are not allowed. Do not create, share or use them with SmartStream.</li>
+      <li data-i18n-html="m.mc.rules3">SmartStream ships no collectors for such sources and has no collector store.</li>
+    </ul>
+
+    <p class="pager">
+      <a href="troubleshooting.html" data-i18n="m.mc.pagerPrev">← Troubleshooting</a>
+      <a href="index.html" data-i18n="m.mc.pagerNext">Contents</a>
+    </p>
+  </main>
+
+  <footer class="site-footer" data-i18n="manual.footer">SmartStream User Manual</footer>
+  <script src="../assets/i18n-product.js"></script>
+  <script src="../assets/i18n-manual.js"></script>
+  <script src="../assets/i18n.js"></script>
+  <script src="../assets/site.js"></script>
+</body>
+</html>
