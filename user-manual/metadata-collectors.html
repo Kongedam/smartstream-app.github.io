@@ -31,10 +31,10 @@
       <figcaption data-i18n="m.mc.fig50">The entry under Accounts &amp; Connections.</figcaption>
     </figure>
     <figure class="figure">
-      <img src="../images/screenshots/51-collectors-overview.png" data-i18n-alt="m.mc.fig51" alt="The overview: built-in AniList collector with live progress and action buttons.">
-      <figcaption data-i18n="m.mc.fig51">The overview: built-in AniList collector with live progress and action buttons.</figcaption>
+      <img src="../images/screenshots/51-collectors-overview.png" data-i18n-alt="m.mc.fig51" alt="The overview: built-in AniList collector unfolded with live progress, On/Off switch, and icon buttons.">
+      <figcaption data-i18n="m.mc.fig51">The overview: built-in AniList collector unfolded with live progress, On/Off switch, and icon buttons.</figcaption>
     </figure>
-    <p data-i18n-html="m.mc.overviewP">Each collector shows its live progress (how many titles were found and checked), or <strong>Needs an API key</strong> / <strong>Switched off</strong>, along with buttons for <strong>On / Off</strong>, <strong>API key</strong> (when required), <strong>Edit on screen</strong>, <strong>Fullscreen test</strong>, <strong>Export</strong> (to Google Drive) and <strong>Delete</strong>.</p>
+    <p data-i18n-html="m.mc.overviewP">At the top, use the <strong>QR</strong> icon to import or build from your phone (or <strong>+</strong> to build on screen). Each collector sits in a foldable card showing live progress (or <strong>Needs an API key</strong> / <strong>Switched off</strong>) and an <strong>On / Off</strong> switch on the right. Press <strong>OK</strong> on a collector to unfold its icon buttons: <strong>API key</strong> (key), <strong>Edit</strong> (pencil), <strong>Test</strong> (play), <strong>Export / Share</strong> (upload to Google Drive on TV, or share on phone/tablet), and <strong>Delete</strong> (trash).</p>
 
     <h2 data-i18n="m.mc.animeH">Built-in: Anime from AniList</h2>
     <p data-i18n-html="m.mc.animeP">SmartStream ships with <strong>AniList</strong> built in. It is free, needs no account or API key, and is ready as soon as you switch it <strong>On</strong> in the overview.</p>
@@ -43,15 +43,15 @@
       <li data-i18n-html="m.mc.anime2">Titles TMDB already found keep all their TMDB data; AniList only fills in details that are still missing.</li>
       <li data-i18n-html="m.mc.anime3">Titles TMDB could not find get poster, background image, plot, rating, genres, studio, trailer and episode count from AniList.</li>
       <li data-i18n-html="m.mc.anime4">Lookups run quietly in the background after every library scan (up to 30 requests per minute). Every title is checked once.</li>
-      <li data-i18n-html="m.mc.anime5">If your provider uses other folder names for anime, choose <strong>Edit on screen</strong>, go to Step 6 (<strong>Folders</strong>), tap your folder words and save.</li>
+      <li data-i18n-html="m.mc.anime5">If your provider uses other folder names for anime, press <strong>OK</strong> on <strong>AniList</strong>, choose the <strong>Edit</strong> (pencil) button, go to Step 6/10 (<strong>Folders</strong>), tap your folder words and save.</li>
     </ul>
 
-    <h2 data-i18n="m.mc.findDataH">Where to find the data on AniList's website</h2>
-    <p data-i18n-html="m.mc.findDataP">To build a collector for any source, you only need to look up a few basic facts in that service's API documentation. Here is how we find them on <strong>AniList's API documentation</strong> (<code>docs.anilist.co</code>):</p>
+    <h2 data-i18n="m.mc.findDataH">Before you start: Find 3 things on AniList's website</h2>
+    <p data-i18n-html="m.mc.findDataP">To build a collector for any service, you only need three facts from its API documentation (here from <code>docs.anilist.co</code>):</p>
     <ol>
-      <li data-i18n-html="m.mc.find1"><strong>Base URL &amp; Request method:</strong> Under <em>GraphQL → Getting Started</em>, AniList states that all requests are sent as <strong>POST</strong> requests to <code>https://graphql.anilist.co</code> with a JSON body containing <code>query</code> and <code>variables</code>. <em>(Simpler REST APIs like TVMaze or OMDb use <strong>GET</strong> instead, where the search word is sent in the URL).</em></li>
-      <li data-i18n-html="m.mc.find2"><strong>API key &amp; Speed limit:</strong> Under <em>Authentication</em> and <em>Rate Limiting</em>, AniList confirms that public anime lookups need <strong>no authentication</strong> (<code>None</code>) and lists the request limit (<strong>30 requests per minute</strong> during degraded mode, or 90 per minute normally).</li>
-      <li data-i18n-html="m.mc.find3"><strong>Search query:</strong> Under <em>Query Examples → Media ("Search anime by title")</em>, AniList shows the exact GraphQL query used to search for anime by title using a <code>$search</code> variable. In SmartStream, we simply pass <code>"{query}"</code> as the <code>"search"</code> variable so SmartStream inserts each title automatically.</li>
+      <li data-i18n-html="m.mc.find1"><strong>1. Web address &amp; method:</strong> Under <em>GraphQL → Getting Started</em>, AniList states that requests are sent as <strong>POST</strong> to <code>https://graphql.anilist.co</code>. <em>(Most simpler APIs like TVMaze or OMDb use <strong>GET</strong> instead).</em></li>
+      <li data-i18n-html="m.mc.find2"><strong>2. Key &amp; speed limit:</strong> Under <em>Authentication</em> and <em>Rate Limiting</em>, AniList needs <strong>no API key</strong> (<code>None</code>) and allows <strong>30 requests per minute</strong>.</li>
+      <li data-i18n-html="m.mc.find3"><strong>3. Search query:</strong> Under <em>Query Examples → Media</em>, copy the title search query and put <code>"{query}"</code> inside <code>"search": "{query}"</code> so SmartStream inserts each title automatically.</li>
     </ol>
     <figure class="figure">
       <img src="../images/screenshots/55-anilist-docs-endpoint.png" data-i18n-alt="m.mc.fig55" alt="AniList API docs: POST requests to https://graphql.anilist.co with query and variables.">
@@ -66,86 +66,86 @@
       <figcaption data-i18n="m.mc.fig57">AniList API docs (Query Examples → Media): how to search anime by title with the $search variable.</figcaption>
     </figure>
 
-    <h2 data-i18n="m.mc.screenH">Step-by-step: Build the AniList plugin on screen</h2>
-    <p data-i18n-html="m.mc.screenP">Choose <strong>Build on screen</strong> (or <strong>Edit on screen</strong> on AniList to inspect how it is set up). You can jump between the numbered steps at the top at any time with your remote.</p>
+    <h2 data-i18n="m.mc.screenH">Step-by-step: Build the AniList collector on screen</h2>
+    <p data-i18n-html="m.mc.screenP">Press <strong>+</strong> in the overview to start from scratch (or press <strong>Edit</strong> on AniList to inspect its setup). Use <strong>Back</strong> and <strong>Next</strong> at the bottom to move through the 10 steps.</p>
 
-    <h3 data-i18n="m.mc.s1H">Step 1 — About</h3>
-    <p data-i18n-html="m.mc.step1">Enter the <strong>Name</strong> (<code>AniList</code>) and a short <strong>Description</strong>. Under <em>What does it require?</em>, leave <strong>Requires an API key</strong> and <strong>Requires an account</strong> switched off, since AniList is free and open. (If you build a collector that needs a key, turn <em>Requires an API key</em> on and enter the sign-up URL so the TV can show a QR code to the sign-up page).</p>
+    <h3 data-i18n="m.mc.s1H">Step 1/10 — About</h3>
+    <p data-i18n-html="m.mc.step1">Enter <strong>Name</strong> (<code>AniList</code>) and a short <strong>Description</strong>. Leave <strong>Requires an API key</strong> and <strong>Requires an account</strong> switched off, then press <strong>Next</strong>.</p>
     <figure class="figure">
-      <img src="../images/screenshots/58-collectors-step1-about.png" data-i18n-alt="m.mc.fig58" alt="Step 1 — About: name, description and whether an API key or account is needed.">
-      <figcaption data-i18n="m.mc.fig58">Step 1 — About: name, description and whether an API key or account is needed.</figcaption>
-    </figure>
-
-    <h3 data-i18n="m.mc.s2H">Step 2 — Search</h3>
-    <p data-i18n-html="m.mc.step2">Enter the <strong>Base URL</strong> (<code>https://graphql.anilist.co</code>) from the AniList documentation. Set <strong>Request method</strong> to <strong>POST</strong>, set <strong>Search</strong> to <strong>Separate</strong> (so movies search for anime movies and series search for TV/OVA series), turn on both <strong>Movies</strong> and <strong>Series</strong> under <em>What should it find?</em>, and set <strong>Lookup</strong> to <strong>Search only</strong> because AniList returns all details in a single response.</p>
-    <figure class="figure">
-      <img src="../images/screenshots/59-collectors-step2-search.png" data-i18n-alt="m.mc.fig59" alt="Step 2 — Search: Base URL, POST method, Separate movie/series search, and Search only.">
-      <figcaption data-i18n="m.mc.fig59">Step 2 — Search: Base URL, POST method, Separate movie/series search, and Search only.</figcaption>
+      <img src="../images/screenshots/58-collectors-step1-about.png" data-i18n-alt="m.mc.fig58" alt="Step 1/10 — About: name, description and whether an API key or account is needed.">
+      <figcaption data-i18n="m.mc.fig58">Step 1/10 — About: name, description and whether an API key or account is needed.</figcaption>
     </figure>
 
-    <h3 data-i18n="m.mc.s3H">Steps 3 &amp; 4 — Movies and Series requests</h3>
-    <p data-i18n-html="m.mc.step3">Set the <strong>Search path</strong> to <code>/</code>. On the right, enter the JSON <strong>Request body</strong> from AniList's query example and write <code>"{query}"</code> inside <code>"variables": { "search": "{query}" }</code>. Step 3 uses <code>format_in: [MOVIE]</code> for anime movies, and Step 4 uses <code>format_in: [TV, TV_SHORT, ONA, OVA]</code> for anime series. <em>Tip: For a standard GET API (like TVMaze), there is no JSON box — you just enter the path (e.g. <code>/search/shows</code>) and the parameter name (e.g. <code>q</code>).</em></p>
+    <h3 data-i18n="m.mc.s2H">Step 2/10 — Search</h3>
+    <p data-i18n-html="m.mc.step2">Enter <strong>Base URL</strong> (<code>https://graphql.anilist.co</code>). Select <strong>POST</strong>, <strong>Separate</strong> (so movies and series search separately), turn on <strong>Movies</strong> and <strong>Series</strong>, and choose <strong>Search only</strong>.</p>
     <figure class="figure">
-      <img src="../images/screenshots/60-collectors-step3-movies.png" data-i18n-alt="m.mc.fig60" alt="Step 3 — Movies: path / and the GraphQL POST request body for anime movies.">
-      <figcaption data-i18n="m.mc.fig60">Step 3 — Movies: path / and the GraphQL POST request body for anime movies.</figcaption>
-    </figure>
-    <figure class="figure">
-      <img src="../images/screenshots/61-collectors-step4-series.png" data-i18n-alt="m.mc.fig61" alt="Step 4 — Series: path / and the GraphQL POST request body for anime series.">
-      <figcaption data-i18n="m.mc.fig61">Step 4 — Series: path / and the GraphQL POST request body for anime series.</figcaption>
+      <img src="../images/screenshots/59-collectors-step2-search.png" data-i18n-alt="m.mc.fig59" alt="Step 2/10 — Search: Base URL, POST method, Separate movie/series search, and Search only.">
+      <figcaption data-i18n="m.mc.fig59">Step 2/10 — Search: Base URL, POST method, Separate movie/series search, and Search only.</figcaption>
     </figure>
 
-    <h3 data-i18n="m.mc.s5H">Step 5 — Access &amp; speed</h3>
-    <p data-i18n-html="m.mc.step5">Set <strong>Authentication</strong> to <strong>None</strong>. Under <strong>Speed</strong>, enter <code>30</code> in <strong>Per minute</strong>, <code>3</code> in <strong>Per second</strong>, and <code>1</code> in <strong>Workers</strong>, matching AniList's rate limit. SmartStream automatically adapts its speed and pauses if the source sends a rate-limit warning.</p>
+    <h3 data-i18n="m.mc.s3H">Steps 3/10 &amp; 4/10 — Movies and Series</h3>
+    <p data-i18n-html="m.mc.step3">Set <strong>Search path</strong> to <code>/</code> and paste AniList's query into <strong>Request body</strong> with <code>"search": "{query}"</code>. Step 3 uses <code>format_in: [MOVIE]</code> for movies; Step 4 uses <code>format_in: [TV, TV_SHORT, ONA, OVA]</code> for series. <em>(Tip: For a normal GET API like TVMaze, just enter the path and parameter name — no JSON body needed).</em></p>
     <figure class="figure">
-      <img src="../images/screenshots/62-collectors-step5-access.png" data-i18n-alt="m.mc.fig62" alt="Step 5 — Access &amp; speed: Authentication None, 30 per minute, 3 per second, 1 worker.">
-      <figcaption data-i18n="m.mc.fig62">Step 5 — Access &amp; speed: Authentication None, 30 per minute, 3 per second, 1 worker.</figcaption>
+      <img src="../images/screenshots/60-collectors-step3-movies.png" data-i18n-alt="m.mc.fig60" alt="Step 3/10 — Movies: path / and the GraphQL POST request body for anime movies.">
+      <figcaption data-i18n="m.mc.fig60">Step 3/10 — Movies: path / and the GraphQL POST request body for anime movies.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="../images/screenshots/61-collectors-step4-series.png" data-i18n-alt="m.mc.fig61" alt="Step 4/10 — Series: path / and the GraphQL POST request body for anime series.">
+      <figcaption data-i18n="m.mc.fig61">Step 4/10 — Series: path / and the GraphQL POST request body for anime series.</figcaption>
     </figure>
 
-    <h3 data-i18n="m.mc.s6H">Step 6 — Folders</h3>
-    <p data-i18n-html="m.mc.step6">On the left, SmartStream splits your own IPTV folder names into clickable words. Press <strong>OK</strong> on a word once to <strong>include</strong> it (green), twice to <strong>exclude</strong> it (red), or three times to clear it. With <code>anime</code>, <code>animé</code> and <code>アニメ</code> selected in green, the list on the right immediately highlights in green which of your folders this collector will handle.</p>
+    <h3 data-i18n="m.mc.s5H">Step 5/10 — Access &amp; speed</h3>
+    <p data-i18n-html="m.mc.step5">Choose <strong>None</strong> under Authentication. Under <strong>Speed</strong>, enter <code>30</code> in <strong>Per minute</strong>, <code>3</code> in <strong>Per second</strong>, and <code>1</code> in <strong>Workers</strong>.</p>
     <figure class="figure">
-      <img src="../images/screenshots/63-collectors-step6-folders.png" data-i18n-alt="m.mc.fig63" alt="Step 6 — Folders: anime words selected in green and matching folders highlighted on the right.">
-      <figcaption data-i18n="m.mc.fig63">Step 6 — Folders: anime words selected in green and matching folders highlighted on the right.</figcaption>
+      <img src="../images/screenshots/62-collectors-step5-access.png" data-i18n-alt="m.mc.fig62" alt="Step 5/10 — Access &amp; speed: Authentication None, 30 per minute, 3 per second, 1 worker.">
+      <figcaption data-i18n="m.mc.fig62">Step 5/10 — Access &amp; speed: Authentication None, 30 per minute, 3 per second, 1 worker.</figcaption>
     </figure>
 
-    <h3 data-i18n="m.mc.s7H">Step 7 — Title clean-up</h3>
-    <p data-i18n-html="m.mc.step7">Keep <strong>Clean title before sending</strong> switched on. IPTV providers often add language tags (<code>EN -</code>), years, dots or resolution brackets (<code>[1080p]</code>) to titles; SmartStream strips those before asking AniList. Below the buttons you see three live examples from your own folders showing the original provider title on the left and the cleaned search text on the right.</p>
+    <h3 data-i18n="m.mc.s6H">Step 6/10 — Folders</h3>
+    <p data-i18n-html="m.mc.step6">Press <strong>OK</strong> on folder words on the left: once = <strong>include</strong> (green), twice = <strong>exclude</strong> (red), three times = clear. Select <code>anime</code>, <code>animé</code> and <code>アニメ</code> — matching folders turn green on the right.</p>
     <figure class="figure">
-      <img src="../images/screenshots/64-collectors-step7-clean.png" data-i18n-alt="m.mc.fig64" alt="Step 7 — Title clean-up: live examples from your folders showing original title vs cleaned search text.">
-      <figcaption data-i18n="m.mc.fig64">Step 7 — Title clean-up: live examples from your folders showing original title vs cleaned search text.</figcaption>
+      <img src="../images/screenshots/63-collectors-step6-folders.png" data-i18n-alt="m.mc.fig63" alt="Step 6/10 — Folders: anime words selected in green and matching folders highlighted on the right.">
+      <figcaption data-i18n="m.mc.fig63">Step 6/10 — Folders: anime words selected in green and matching folders highlighted on the right.</figcaption>
     </figure>
 
-    <h3 data-i18n="m.mc.s8H">Step 8 — Test &amp; fields (no JSON path typing needed)</h3>
-    <p data-i18n-html="m.mc.step8">Pick one of your anime folders and press <strong>Run test on folder</strong>. SmartStream takes a real title from that folder, asks AniList, reads every field in the answer, and <strong>automatically selects the best match</strong> for each library field. On the right, the <strong>Card preview</strong> immediately shows how the movie or series will look in your library.</p>
+    <h3 data-i18n="m.mc.s7H">Step 7/10 — Title clean-up</h3>
+    <p data-i18n-html="m.mc.step7">Keep <strong>Clean title before sending</strong> on so tags like <code>EN -</code>, years, dots and <code>[1080p]</code> are stripped before searching. Three live examples from your folders appear below.</p>
     <figure class="figure">
-      <img src="../images/screenshots/65-collectors-step8-test.png" data-i18n-alt="m.mc.fig65" alt="Step 8 — Test &amp; fields: test on a folder with automatic field mapping and live card preview.">
-      <figcaption data-i18n="m.mc.fig65">Step 8 — Test &amp; fields: test on a folder with automatic field mapping and live card preview.</figcaption>
+      <img src="../images/screenshots/64-collectors-step7-clean.png" data-i18n-alt="m.mc.fig64" alt="Step 7/10 — Title clean-up: live examples from your folders showing original title vs cleaned search text.">
+      <figcaption data-i18n="m.mc.fig64">Step 7/10 — Title clean-up: live examples from your folders showing original title vs cleaned search text.</figcaption>
     </figure>
-    <p data-i18n-html="m.mc.step8b">Want to change a field? Just press <strong>OK</strong> on any row under <strong>Library fields</strong> (for example <em>Description / plot</em> or <em>Poster</em>). A popup lists every field AniList returned, together with its real sample text or image thumbnail from the test — just click the one you want!</p>
+
+    <h3 data-i18n="m.mc.s8H">Step 8/10 — Test &amp; fields</h3>
+    <p data-i18n-html="m.mc.step8">Pick an anime folder and press <strong>Run test on folder</strong>. SmartStream tests one real title, <strong>automatically matches every field</strong>, and shows a live <strong>Card preview</strong> on the right.</p>
+    <figure class="figure">
+      <img src="../images/screenshots/65-collectors-step8-test.png" data-i18n-alt="m.mc.fig65" alt="Step 8/10 — Test &amp; fields: test on a folder with automatic field mapping and live card preview.">
+      <figcaption data-i18n="m.mc.fig65">Step 8/10 — Test &amp; fields: test on a folder with automatic field mapping and live card preview.</figcaption>
+    </figure>
+    <p data-i18n-html="m.mc.step8b">Want to swap a field? Press <strong>OK</strong> on any row under <strong>Library fields</strong> (like <em>Description / plot</em>) and pick from the popup list showing live text and image thumbnails.</p>
     <figure class="figure">
       <img src="../images/screenshots/66-collectors-field-picker.png" data-i18n-alt="m.mc.fig66" alt="Choosing a source field from the popup list with sample values and image thumbnails.">
       <figcaption data-i18n="m.mc.fig66">Choosing a source field from the popup list with sample values and image thumbnails.</figcaption>
     </figure>
 
-    <h3 data-i18n="m.mc.s9H">Step 9 — Episodes</h3>
-    <p data-i18n-html="m.mc.step9">For AniList, leave <strong>Episodes</strong> set to <strong>Off</strong> (AniList does not provide per-episode plot summaries, and TMDB already fetches episode lists for known series). If you build a collector for a source that has an episode list endpoint (such as TVMaze with <code>/shows/{id}/episodes</code>), you can switch it <strong>On</strong> here to fill in missing episode titles, plots and thumbnails.</p>
+    <h3 data-i18n="m.mc.s9H">Step 9/10 — Episodes</h3>
+    <p data-i18n-html="m.mc.step9">Leave <strong>Episodes</strong> set to <strong>Off</strong> for AniList. <em>(Switch it <strong>On</strong> only for sources with a separate episode-list endpoint, such as TVMaze's <code>/shows/{id}/episodes</code>).</em></p>
     <figure class="figure">
-      <img src="../images/screenshots/67-collectors-step9-episodes.png" data-i18n-alt="m.mc.fig67" alt="Step 9 — Episodes: left Off for AniList.">
-      <figcaption data-i18n="m.mc.fig67">Step 9 — Episodes: left Off for AniList.</figcaption>
+      <img src="../images/screenshots/67-collectors-step9-episodes.png" data-i18n-alt="m.mc.fig67" alt="Step 9/10 — Episodes: left Off for AniList.">
+      <figcaption data-i18n="m.mc.fig67">Step 9/10 — Episodes: left Off for AniList.</figcaption>
     </figure>
 
-    <h3 data-i18n="m.mc.s10H">Step 10 — Save</h3>
-    <p data-i18n-html="m.mc.step10">The final step shows how many library fields are filled (<code>15 of 24 library fields are filled</code>) and warns you if anything is missing. Press <strong>Save collector</strong> to save and activate it, or <strong>Fullscreen test</strong> to watch it run in the live log.</p>
+    <h3 data-i18n="m.mc.s10H">Step 10/10 — Save</h3>
+    <p data-i18n-html="m.mc.step10">Check the summary (<code>15 of 24 library fields are filled</code>) and press <strong>Save collector</strong> to activate it, or <strong>Test</strong> to watch it run in the live log.</p>
     <figure class="figure">
-      <img src="../images/screenshots/68-collectors-step10-save.png" data-i18n-alt="m.mc.fig68" alt="Step 10 — Save: summary of mapped fields, Save collector and Fullscreen test.">
-      <figcaption data-i18n="m.mc.fig68">Step 10 — Save: summary of mapped fields, Save collector and Fullscreen test.</figcaption>
+      <img src="../images/screenshots/68-collectors-step10-save.png" data-i18n-alt="m.mc.fig68" alt="Step 10/10 — Save: summary of mapped fields, Save collector and Test.">
+      <figcaption data-i18n="m.mc.fig68">Step 10/10 — Save: summary of mapped fields, Save collector and Test.</figcaption>
     </figure>
 
     <h2 data-i18n="m.mc.phoneH">Even easier: Build or edit from your phone (QR)</h2>
-    <p data-i18n-html="m.mc.phoneP">Prefer copying and pasting URLs or GraphQL queries on your phone instead of using the TV remote? Choose <strong>Create / edit via phone (QR)</strong> in the overview and scan the QR code. Your phone and TV must be on the same Wi-Fi; everything sent between them is encrypted with a key that only exists inside the QR code.</p>
+    <p data-i18n-html="m.mc.phoneP">Want to copy and paste URLs or queries from your phone instead of typing on the TV? Press the <strong>QR</strong> icon at the top of the overview and scan the code on the same Wi-Fi. Everything is encrypted with a key inside the QR code. <em>(On phone or tablet, you can also import <code>.json</code> files or build collectors directly in the app).</em></p>
     <figure class="figure">
-      <img src="../images/screenshots/52-collectors-phone-qr.png" data-i18n-alt="m.mc.fig52" alt="The TV shows the QR code and, on the right, a live preview of the card you build on the phone.">
-      <figcaption data-i18n="m.mc.fig52">The TV shows the QR code and, on the right, a live preview of the card you build on the phone.</figcaption>
+      <img src="../images/screenshots/52-collectors-phone-qr.png" data-i18n-alt="m.mc.fig52" alt="The TV shows the Import or create via phone dialog with the encrypted QR code.">
+      <figcaption data-i18n="m.mc.fig52">The TV shows the Import or create via phone dialog with the encrypted QR code.</figcaption>
     </figure>
     <ol>
       <li data-i18n-html="m.mc.phone1"><strong>Import / Export:</strong> upload a <code>.json</code> file or paste JSON directly, add an API key if needed, and tap <strong>Install on TV</strong>. You can also download or open any collector already on the TV (including <strong>AniList</strong>) to inspect or edit it on your phone.</li>
@@ -162,8 +162,8 @@
       <figcaption data-i18n="m.mc.fig54">Field dropdowns with the live card preview at the bottom.</figcaption>
     </figure>
 
-    <h2 data-i18n="m.mc.testH">Live log (Fullscreen test)</h2>
-    <p data-i18n-html="m.mc.testP">Press <strong>Fullscreen test</strong> on any collector to open the <strong>Live log</strong>. Pick a folder and press <strong>Start on folder</strong> to run the collector across the folder and save the results into your library while watching every request, response time, and rate-limit pause live on screen.</p>
+    <h2 data-i18n="m.mc.testH">Live log (Test)</h2>
+    <p data-i18n-html="m.mc.testP">Unfold any collector and press the <strong>Test</strong> (play) icon — or press <strong>Test</strong> in Step 10 — to open the <strong>Live log</strong>. Pick a folder and press <strong>Start on folder</strong> to watch requests, HTTP responses, and rate-limit pauses in real time.</p>
     <figure class="figure">
       <img src="../images/screenshots/69-collectors-live-test.png" data-i18n-alt="m.mc.fig69" alt="Live log: watch requests, HTTP responses and rate-limit pauses in real time.">
       <figcaption data-i18n="m.mc.fig69">Live log: watch requests, HTTP responses and rate-limit pauses in real time.</figcaption>
